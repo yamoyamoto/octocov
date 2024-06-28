@@ -502,7 +502,13 @@ func printMetrics(cmd *cobra.Command) error {
 		c.CodeToTestRatio = nil
 		c.TestExecutionTime = nil
 	}
-	r, err := report.New(c.Repository, report.Locale(c.Locale), report.Title(c.Comment.Title))
+
+	var reportTitle string
+	if c.Comment != nil {
+		reportTitle = c.Comment.Title
+	}
+
+	r, err := report.New(c.Repository, report.Locale(c.Locale), report.Title(reportTitle))
 	if err != nil {
 		return err
 	}
