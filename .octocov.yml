@@ -16,6 +16,7 @@ push:
   if: is_default_branch
 comment:
   if: is_pull_request
+  title: 'Coverage report!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
 summary:
   if: true
 # body:
