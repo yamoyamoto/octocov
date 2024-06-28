@@ -170,8 +170,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/k1low/octocov:${{ steps.latest_version.outputs.version }}
-            ghcr.io/k1low/octocov:latest
+            ghcr.io/yamoyamoto/octocov:${{ steps.latest_version.outputs.version }}
+            ghcr.io/yamoyamoto/octocov:latest
           labels: |
             org.opencontainers.image.name=octocov
             org.opencontainers.image.revision=${{ github.sha }}
