@@ -382,7 +382,7 @@ var rootCmd = &cobra.Command{
 				if err != nil {
 					return err
 				}
-				if err := commentReport(ctx, c, content, r.Key()); err != nil {
+				if err := commentReport(ctx, c, content, r.Title()); err != nil {
 					return err
 				}
 				return nil
