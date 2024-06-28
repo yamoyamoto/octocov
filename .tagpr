@@ -35,3 +35,4 @@
 	release = draft
 	versionFile = version/version.go
 	command = "make prerelease_for_tagpr"
+	changelog = false
