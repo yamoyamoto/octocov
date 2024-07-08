@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.60.1](https://github.com/yamoyamoto/octocov/compare/v0.60.0...v0.60.1) - 2024-07-08
+
 ## [v0.60.0](https://github.com/k1LoW/octocov/compare/v0.59.3...v0.60.0) - 2024-05-24
 ### Breaking Changes 🛠
 - All numbers are displayed rounded down to one decimal place. by @k1LoW in https://github.com/k1LoW/octocov/pull/371
