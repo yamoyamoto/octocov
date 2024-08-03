@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.62.0](https://github.com/yamoyamoto/octocov/compare/v0.61.1...v0.62.0) - 2024-08-03
+
 ## [v0.62.0](https://github.com/k1LoW/octocov/compare/v0.61.1...v0.62.0) - 2024-07-10
 ### Breaking Changes 🛠
 - Always count by LOC when merging multiple coverage. by @k1LoW in https://github.com/k1LoW/octocov/pull/395
