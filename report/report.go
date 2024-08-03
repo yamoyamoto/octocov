@@ -36,6 +36,7 @@ var (
 )
 
 type Report struct {
+	title             string             `json:"title"`
 	Repository        string             `json:"repository"`
 	Ref               string             `json:"ref"`
 	Commit            string             `json:"commit"`
@@ -76,6 +77,7 @@ func New(ownerrepo string, opts ...Option) (*Report, error) {
 	}
 
 	return &Report{
+		title:      o.Title,
 		Repository: ownerrepo,
 		Ref:        ref,
 		Commit:     commit,
@@ -85,6 +87,10 @@ func New(ownerrepo string, opts ...Option) (*Report, error) {
 }
 
 func (r *Report) Title() string {
+	if r.title != "" {
+		return r.title
+	}
+
 	key := r.Key()
 	if key == "" {
 		return "Code Metrics Report"
@@ -100,7 +106,7 @@ func (r *Report) Key() string {
 	if r.Repository == repo {
 		return ""
 	}
-	return strings.TrimPrefix(r.Repository, fmt.Sprintf("%s/", repo))
+	return strings.TrimPrefix(r.Repository, fmt.Sprintf("%s/%s", repo, r.Title()))
 }
 
 func (r *Report) String() string {

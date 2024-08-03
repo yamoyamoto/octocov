@@ -161,7 +161,12 @@ var rootCmd = &cobra.Command{
 			return nil
 		}
 
-		r, err := report.New(c.Repository, report.Locale(c.Locale))
+		var reportTitle string
+		if c.Comment != nil {
+			reportTitle = c.Comment.Title
+		}
+
+		r, err := report.New(c.Repository, report.Locale(c.Locale), report.Title(reportTitle))
 		if err != nil {
 			return err
 		}
@@ -354,7 +359,12 @@ var rootCmd = &cobra.Command{
 				}
 			}
 			if c.Diff.Path != "" {
-				rt, err := report.New(c.Repository, report.Locale(c.Locale))
+				var reportTitle string
+				if c.Comment != nil {
+					reportTitle = c.Comment.Title
+				}
+
+				rt, err := report.New(c.Repository, report.Locale(c.Locale), report.Title(reportTitle))
 				if err != nil {
 					return err
 				}
@@ -502,7 +512,13 @@ func printMetrics(cmd *cobra.Command) error {
 		c.CodeToTestRatio = nil
 		c.TestExecutionTime = nil
 	}
-	r, err := report.New(c.Repository, report.Locale(c.Locale))
+
+	var reportTitle string
+	if c.Comment != nil {
+		reportTitle = c.Comment.Title
+	}
+
+	r, err := report.New(c.Repository, report.Locale(c.Locale), report.Title(reportTitle))
 	if err != nil {
 		return err
 	}
